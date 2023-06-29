@@ -6,7 +6,8 @@ namespace TextToolKit
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Home begin = new Home();
+            begin.RunTools();
         }
     }
 }
