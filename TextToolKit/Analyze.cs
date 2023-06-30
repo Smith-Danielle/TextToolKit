@@ -39,7 +39,7 @@ namespace TextToolKit
                 {
                     if (mostChar == "Space")
                     {
-                        int nextMaxCount = statsChar.Where(x => x.Character == " ").Max(x => x.CharCount);
+                        int nextMaxCount = statsChar.Where(x => x.Character != " ").Max(x => x.CharCount);
                         var nextMaxCharGroup = statsChar.Where(x => x.CharCount == nextMaxCount).Select(x => x.Character).OrderBy(x => x);
                         mostChar += " followed by ";
                         mostChar += nextMaxCharGroup.Count() > 1 ? string.Join(" ", nextMaxCharGroup) : nextMaxCharGroup.First();
@@ -66,7 +66,7 @@ namespace TextToolKit
                 {
                     if (leastChar == "Space")
                     {
-                        int nextMinCount = statsChar.Where(x => x.Character == " ").Min(x => x.CharCount);
+                        int nextMinCount = statsChar.Where(x => x.Character != " ").Min(x => x.CharCount);
                         var nextMinCharGroup = statsChar.Where(x => x.CharCount == nextMinCount).Select(x => x.Character).OrderBy(x => x);
                         leastChar += " followed by ";
                         leastChar += nextMinCharGroup.Count() > 1 ? string.Join(" ", nextMinCharGroup) : nextMinCharGroup.First();
